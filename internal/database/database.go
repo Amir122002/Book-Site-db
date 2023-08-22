@@ -7,7 +7,7 @@ import (
 )
 
 func DataBase() (*gorm.DB, error) {
-	dbUri := "host=localhost port=5432 user=postgres password=******** dbname=book sslmode=disable"
+	dbUri := "host=localhost port=5432 user=postgres password=17122002amir dbname=book sslmode=disable"
 	db, err := gorm.Open(postgres.Open(dbUri), &gorm.Config{})
 	if err != nil {
 		log.Print(err)

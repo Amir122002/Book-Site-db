@@ -77,7 +77,7 @@ func Read(w http.ResponseWriter, r *http.Request) {
 	}
 	perPage := 10
 	offset := (page - 1) * perPage
-	db.Table("book").Limit(perPage).Offset(offset).Find(&book)
+	db.Table("book").Order("id").Limit(perPage).Offset(offset).Find(&book)
 	//db.Limit(perPage).Offset(offset).Find(&book)
 	jsonBytes, err := json.Marshal(book)
 	if err != nil {
